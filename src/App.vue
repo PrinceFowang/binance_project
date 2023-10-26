@@ -50,7 +50,6 @@ export default {
 </script>
 
 <style scoped>
-/* Apply a smoother background gradient to both columns */
 .body-content {
   display: flex;
   height: 100vh;
@@ -68,58 +67,57 @@ export default {
 .img-logo {
   max-width: 100%;
   max-height: 100%;
+  transition: transform 1s;
 }
 
 .img-logo:hover {
-  height: 100ch;
-  width: 70ch;
+  transform: scale(1.1);
 }
 
 .right-column {
   flex: 2;
   padding: 20px;
-  background-color: transparent; /* No background color for the right column */
+  background-color: transparent;
   display: flex;
-  flex-direction: column; /* Set column layout for text and button */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .text-container {
   text-align: center;
-  margin-bottom: 20px; /* Add margin between text and button */
+  margin-bottom: 20px;
 }
 
 .button-container {
-  margin-top: 0px; /* Push the button to the bottom */
+  margin-top: 0px;
   text-align: center;
 }
 
-/* Apply smoother text styles */
 h1 {
-  font-size: 36px; /* Increase the font size for the heading */
+  font-size: 36px;
   color: #fff;
 }
 
 p {
-  font-size: 18px; /* Increase the font size for the paragraph */
+  font-size: 18px;
   line-height: 1.6;
-  color: #ccc; /* Use a softer color for the text */
+  color: #ccc;
 }
 
-/* Style the button */
 .login-component button {
-  padding: 15px 30px; /* Adjust button padding for a larger size */
-  font-size: 20px; /* Increase button font size */
-  background-color: #8c7054; /* Button background color */
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #8c7054;
   border: none;
   color: #fff;
   border-radius: 5px;
 }
 
 .login-component button:hover {
-  background-color: #eebd50; /* Button color on hover */
+  background-color: #eebd50;
 }
+
 .auto-typing {
   color: #eebd50;
 }

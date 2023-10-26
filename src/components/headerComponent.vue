@@ -2,16 +2,7 @@
   <header>
     <nav class="navbar bg-body-tertiary custom-navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <!-- <img
-            src="@/assets/LogoGor.png"
-            alt="Logo"
-            width="100"
-            height="70"
-            class="d-inline-block align-text-top"
-          /> -->
-          GORILLA WEALTH
-        </a>
+        <a class="navbar-brand" href="/"> GORILLA WEALTH </a>
         <button class="btn btn-outline-success custom-yellow-btn" type="submit">
           About us
         </button>
@@ -38,13 +29,14 @@ export default {
   border-bottom-left-radius: 5%;
 }
 .custom-yellow-btn {
-  color: #8c7054;
+  color: #eebd50;
   border-color: #eebd50;
   font-color: #eebd50;
 }
 
 .custom-yellow-btn:hover {
   background-color: #eebd50;
+  color: #ffffff;
 }
 
 .container-fluid {
@@ -58,8 +50,10 @@ a {
   display: flex;
   align-items: center;
   padding-left: 2ch;
+  transition: color 0.5s; /* Add transition for color change */
 }
+
 a:hover {
-  color: #eebd50;
+  color: #8c7054; /* Change the color on hover */
 }
 </style>
