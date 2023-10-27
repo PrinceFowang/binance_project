@@ -3,9 +3,12 @@
     <nav class="navbar bg-body-tertiary custom-navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"> GORILLA WEALTH </a>
-        <button class="btn btn-outline-success custom-yellow-btn" type="submit">
+        <router-link
+          to="/about"
+          class="btn btn-outline-success custom-yellow-btn"
+        >
           About us
-        </button>
+        </router-link>
       </div>
     </nav>
   </header>
@@ -32,6 +35,7 @@ export default {
   color: #eebd50;
   border-color: #eebd50;
   font-color: #eebd50;
+  font-size: medium;
 }
 
 .custom-yellow-btn:hover {
