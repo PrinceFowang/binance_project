@@ -1,11 +1,16 @@
 <template>
   <header-component></header-component>
   <div class="about-us">
-    <div>
+    <div class="intro-div">
+      <img src="@/assets/LogoGor.png" alt="Logo" class="img-logo" />
       <h1>Our team</h1>
-      <p>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+      <p class="intro-text">
+        In essence, Gorilla Wealth is dedicated to promoting the understanding
+        and importance of ESG factors in the financial and investment landscape.
+        By providing information and insights on these crucial areas
+        (environmental impact, social responsibility, and governance practices)
+        we aim to encourage responsible decision-making and investments that
+        align with a sustainable and socially conscious future.
       </p>
     </div>
     <div class="centered-cards">
@@ -112,11 +117,43 @@ export default {
   border-color: #1f1f1f;
 }
 
+.cart {
+  border-color: #1f1f1f;
+  transition: transform 0.3s; /* Ajoute une transition pour le transform */
+}
+
+.img-logo {
+  max-width: 100%;
+  max-height: auto;
+  transition: transform 1s;
+}
+
+.img-logo:hover {
+  transform: scale(1.1);
+}
+
+.intro-text {
+  color: aliceblue;
+  text-align: center;
+}
+
+.intro-div {
+  max-width: 40%;
+  margin-right: 2%;
+  margin-left: 2%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.cart:hover {
+  transform: translateY(-5px); /* Déplace la carte vers le haut au survol */
+}
+
 h1 {
   color: #eebd50;
   position: relative;
-  right: 15%;
   top: -30%;
+  text-align: center;
 }
 
 .card-content {
