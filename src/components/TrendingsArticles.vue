@@ -2,6 +2,7 @@
   <div class="crypto-news-container">
     <header-component></header-component>
     <div class="news-list">
+      <img src="@/assets/LogoGor.png" alt="Logo" class="img-logo" />
       <h1>Cryptocurrency News</h1>
       <ul>
         <li v-for="article in news" :key="article.id" class="news-item">
@@ -9,11 +10,15 @@
             <a :href="article.url" target="_blank">{{ article.title }}</a>
           </div>
           <div class="news-description">
-            {{ article.description }}
+            {{ article.body }}
           </div>
-          <div class="news-source">Source: {{ article.source.name }}</div>
-          <div class="news-published">
-            Published: {{ formatDate(article.publishedAt) }}
+          <div class="news-info">
+            <div class="news-source">
+              Source: {{ article.source ? article.source.name : "Unknown" }}
+            </div>
+            <div class="news-published">
+              Published: {{ formatDate(article.published_on * 1000) }}
+            </div>
           </div>
         </li>
       </ul>
@@ -40,19 +45,18 @@ export default {
   methods: {
     async fetchCryptocurrencyNews() {
       try {
-        // Replace this URL with the actual cryptocurrency news API endpoint.
         const response = await this.$axios.get(
-          "https://your-crypto-news-api.com/news"
+          "https://min-api.cryptocompare.com/data/v2/news/?lang=EN"
         );
 
-        this.news = response.data.articles;
+        this.news = response.data.Data;
       } catch (error) {
         console.error("Error fetching cryptocurrency news:", error);
       }
     },
-    formatDate(date) {
+    formatDate(timestamp) {
       const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString(undefined, options);
+      return new Date(timestamp).toLocaleDateString(undefined, options);
     },
   },
 };
@@ -62,6 +66,7 @@ export default {
 .crypto-news-container {
   text-align: center;
   padding: 20px;
+  background: linear-gradient(to right, #4e4d4d, #1f1f1f);
 }
 
 .news-list {
@@ -94,13 +99,35 @@ export default {
   font-size: 16px;
 }
 
-.news-source {
+.news-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
   font-size: 14px;
-  margin-top: 5px;
+}
+
+.news-source {
+  color: #007bff; /* Blue color for the source */
 }
 
 .news-published {
-  font-size: 14px;
-  margin-top: 5px;
+  color: #6c757d; /* Gray color for the published date */
+}
+
+.img-logo {
+  max-width: 40%;
+  max-height: auto;
+  margin-left: 0%;
+  transition: transform 1s;
+}
+
+.img-logo:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  color: #eebd50;
+  margin-bottom: 10px;
 }
 </style>
