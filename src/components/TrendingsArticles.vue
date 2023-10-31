@@ -108,11 +108,11 @@ export default {
 }
 
 .news-source {
-  color: #007bff; /* Blue color for the source */
+  color: #007bff;
 }
 
 .news-published {
-  color: #6c757d; /* Gray color for the published date */
+  color: #6c757d;
 }
 
 .img-logo {

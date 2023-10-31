@@ -5,13 +5,13 @@
         <a class="GOR navbar-brand" href="/Beginners"> GORILLA WEALTH </a>
         <div class="navbar" v-if="userData && userData.name">
           <p><strong>Name:</strong> {{ userData.name }}</p>
-
+        </div>
+        <div class="ish">
           <p>
             <a class="rarr nav-link active" aria-current="page" href="/News"
               >Trendings news</a
             >
           </p>
-
           <p>
             <a class="rarr nav-link" href="/Crypto">Financial datas</a>
           </p>
@@ -74,6 +74,13 @@ export default {
   transition: background-color 0.5s, color 0.5s;
 }
 
+.ish {
+  display: flex;
+}
+
+.ish p {
+  margin-right: 20px;
+}
 .container-fluid {
   background-color: #4e4d4d;
   transition: background-color 0.5s;
