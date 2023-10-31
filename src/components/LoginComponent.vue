@@ -7,15 +7,27 @@
 </template>
 
 <script>
+import router from "@/router";
 import { signInAndGetUser } from "@/lib/microsoftGraph.js";
 export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
   methods: {
     async signIn() {
       try {
         const authResult = await signInAndGetUser();
-        console.log("3 Authentification réussie :", authResult.name);
+        console.log("Authentication successful:", authResult.name);
+
+        // Commit the setUser mutation to update the user data
+        this.$store.commit("setUser", authResult);
+
+        // Redirect to the user profile page after successful sign-in
+        router.push({ name: "Beginners" });
       } catch (error) {
-        console.error("Erreur de connexion :", error);
+        console.error("Connection error:", error);
       }
     },
   },
